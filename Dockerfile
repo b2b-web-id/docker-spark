@@ -1,6 +1,8 @@
 FROM ryht/debian:jessie
 MAINTAINER B2B.Web.ID Data Analytics Platform Labs
-RUN apt-get update && \
+RUN echo "deb http://ftp.de.debian.org/debian jessie-backports main" > /etc/apt/sources.list.d/backports.list && \
+    apt-get update && \
+    apt-get upgrade && \
     apt-get install openjdk-8-jdk
 RUN cd /opt && \
     wget http://d3kbcqa49mib13.cloudfront.net/spark-2.0.1-bin-hadoop2.7.tgz && \
