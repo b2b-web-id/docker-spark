@@ -5,8 +5,8 @@ RUN echo "deb http://ftp.de.debian.org/debian jessie-backports main" > /etc/apt/
     apt-get upgrade -y
 RUN apt-get install -y openjdk-8-jdk
 RUN cd /opt && \
-    wget http://d3kbcqa49mib13.cloudfront.net/spark-2.0.1-bin-hadoop2.7.tgz && \
-    tar -xvzf spark-2.0.1-bin-hadoop2.7.tgz && \
-    rm spark-2.0.1-bin-hadoop2.7.tgz
+    wget http://www-us.apache.org/dist/spark/spark-1.6.3/spark-1.6.3-bin-without-hadoop.tgz && \
+    tar -xvzf spark-1.6.3-bin-without-hadoop.tgz && \
+    rm spark-1.6.3-bin-without-hadoop.tgz
 EXPOSE 7077
-CMD ["/opt/spark-2.0.0-bin-hadoop2.7/sbin/start-master.sh"]
+CMD ["/opt/spark-1.6.3-bin-without-hadoop/sbin/start-master.sh"]
